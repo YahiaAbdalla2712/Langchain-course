@@ -49,4 +49,26 @@ tools_for_llm = [
           },
         },
     },
+
+    {
+        "type":"function",
+        "function":{
+            "name":"apply_discount",
+            "description":"get the value percentage of the discount tier and return the final price",
+            "parameters":{
+                "type":"object",
+                "properties":{
+                    "price":{
+                        "type":"float",
+                        "description":"the initial price of the product we get from the get_product_price function before discount",
+                    },
+                    "discount_tier":{
+                        "type":"string",
+                        "description":"The discount tier eg. gold, silver, bronze",
+                    },
+                },
+                "required":["price","discount_tier"],
+            },
+        },
+    },
 ]
